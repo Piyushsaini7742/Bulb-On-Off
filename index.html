@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #bulb {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        #bulb:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bulb</h1>
+    <img id="bulb" src="./2-removebg-preview.png" alt="Bulb" onClick="turnOnOff()">
+    <br>
+    <button onClick="turnOnOff()">Switch</button>
+    <script>
+        let isOn = false;
+        function turnOnOff() {
+            const bulb = document.getElementById('bulb');
+            isOn = !isOn;
+            bulb.src = isOn ? '1-removebg-preview.png' : '2-removebg-preview.png';
+        }
+    </script>
+</body>
+
+</html>
